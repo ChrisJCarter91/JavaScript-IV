@@ -22,15 +22,15 @@ class Instructor extends Person {
     }
 
     speak() {
-        console.log(`Hello, my name is ${this.name} I am from ${this.location}.`);
+        return `Hello, my name is ${this.name} I am from ${this.location}.`;
     }
 
     demo(subject) {
-        console.log(`Today we are learning about ${subject}.`);
+        return `Today we are learning about ${subject}.`;
     }
 
     grade(student, subject) {
-        console.log(`${student.name} receives a perfect score on ${subject}`)
+        return `${student.name} receives a perfect score on ${subject}`;
     }
 
 }
@@ -44,19 +44,19 @@ class Student extends Person {
     }
 
     speak() {
-        console.log(`Hello, my name is ${this.name} I am from ${this.location}.`);
+        return `Hello, my name is ${this.name} I am from ${this.location}.`;
     }
 
     listsSubjects() {
-        console.log(`${this.favSubjects}`);
+        return `${this.favSubjects}`;
     }
 
     PRAssignment(subject) {
-        console.log(`${this.name} has submitted a PR for ${subject}`);
+        return `${this.name} has submitted a PR for ${subject}`;
     }
 
     sprintChallenge(subject) {
-        console.log(`${this.name} has begun sprint challenge on ${subject}.`);
+        return `${this.name} has begun sprint challenge on ${subject}.`;
     } 
 }
 
@@ -68,14 +68,14 @@ class ProjectManager extends Instructor {
     }
 
     speak() {
-        console.log(`Hello, my name is ${this.name} I am from ${this.location}.`);
+        return `Hello, my name is ${this.name} I am from ${this.location}.`;
     }
 
     standUp(channel) {
-        console.log(`${this.name} announces to @${channel} standy times!`)
+        return `${this.name} announces to @${channel} standy times!`;
     }
-    debugsCode(name, subject) {
-        console.log(`${this.name} debugs ${name}'s code on ${subject}.`)
+    debugsCode(student, subject) {
+        return `${this.name} debugs ${student.name}'s code on ${subject}.`;
     }
 }
 
@@ -122,7 +122,7 @@ const barney = new ProjectManager({
 
 console.log(fred.speak());
 
-console.log(barney.debugsCode(`pebbles`, `html`));
+console.log(barney.debugsCode(pebbles, `html`));
 
 console.log(barney.standUp(`web20_sprint3`));
 
