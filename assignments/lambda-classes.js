@@ -1,15 +1,16 @@
 // CODE here for your Lambda Classes
 
 class Person {
-    constructor(attrs)
+    constructor(attrs) {
     this.name = attrs.name;
     this.age = attrs.age;
     this.location = attrs.location;
-    this.gender = attrs.gender
+    this.gender = attrs.gender;
 }
 
 speak() {
     console.log(`Hello, my name is ${this.name} I am from ${this.location}.`);
+}
 }
 
 class Instructor extends Person {
@@ -37,7 +38,7 @@ class Instructor extends Person {
 class Student extends Person {
     constructor(studentAttrs) {
         super(studentAttrs);
-        this.previousBakcground = studentAttrs.previousBakcground;
+        this.previousBackground = studentAttrs.previousBackground;
         this.className = studentAttrs.className;
         this.favSubjects = studentAttrs.favSubjects;
     }
@@ -51,7 +52,7 @@ class Student extends Person {
     }
 
     PRAssignment(subject) {
-        console.log(`${this.name} has submitted a PR for ${this.subject}`);
+        console.log(`${this.name} has submitted a PR for ${subject}`);
     }
 
     sprintChallenge(subject) {
@@ -71,9 +72,60 @@ class ProjectManager extends Instructor {
     }
 
     standUp(channel) {
-        console.log(`${this.name} announces @ ${this.channel} standy times!`)
+        console.log(`${this.name} announces to @${channel} standy times!`)
     }
-    debugsCode(student, subject) {
-        console.log(`${this.name} debugs ${this.student}'s code on ${this.subject}.`)
+    debugsCode(name, subject) {
+        console.log(`${this.name} debugs ${name}'s code on ${subject}.`)
     }
 }
+
+
+const fred = new Instructor({
+    name: `Fred`,
+    location: `Bedrock`,
+    age: 47,
+    gender: `Male`,
+    favLanguage: `JavaScript`,
+    specialty: `Front-end`,
+    catchPhrase: `Don't forget the homies`
+});
+
+const wilma = new Instructor({
+    name: `Wilma`,
+    location: `Bedrock`,
+    age: 40,
+    gender: `Female`,
+    favLanguage: `HTML`,
+    specialty: `Back-end`,
+    catchPhrase: `Forget the homies`
+});
+
+const pebbles = new Student({
+    name: `Pebbles`,
+    location: `Bedrock`,
+    age: 12,
+    gender: `Female`,
+    previousBackground: `HTML`,
+    className: `Web20`,
+    favSubjects: `Javascript`,
+});
+
+const barney = new ProjectManager({
+    name: `Barney`,
+    location: `Bedrock`,
+    age: 42,
+    gender: `Male`,
+    previousBackground: `HTML`,
+    gradClassName: `Web17`,
+    favInstructor: `Dan the cat man`
+});
+
+console.log(fred.speak());
+
+console.log(barney.debugsCode(`pebbles`, `html`));
+
+console.log(barney.standUp(`web20_sprint3`));
+
+console.log(barney.speak());
+
+console.log(pebbles.listsSubjects());
