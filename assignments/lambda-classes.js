@@ -26,11 +26,11 @@ class Instructor extends Person {
     }
 
     demo(subject) {
-        console.log(`Today we are learning about ${this.subject}.`);
+        console.log(`Today we are learning about ${subject}.`);
     }
 
     grade(student, subject) {
-        console.log(`${student.name} receives a perfect score on ${this.subject}`)
+        console.log(`${student.name} receives a perfect score on ${subject}`)
     }
 
 }
@@ -56,7 +56,7 @@ class Student extends Person {
     }
 
     sprintChallenge(subject) {
-        console.log(`${this.name} has begun sprint challenge on ${this.subject}.`);
+        console.log(`${this.name} has begun sprint challenge on ${subject}.`);
     } 
 }
 
